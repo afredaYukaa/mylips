@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyLips" parent="Theme.AppCompat.Light.DarkActionBar" >
+        
+        <item name="colorPrimary"> @color/buttonColor</item>
+        <item name="colorSecondary"> @color/textColor</item>
+
+
+    </style>
+
+</resources>
