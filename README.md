@@ -53,4 +53,10 @@ This project utilizes the following libraries:
 
  # Cloud Computing
 Start a cloud environment using compute engine and SQL virtual machine instances, set up networking for server to mobile apps, debug machine learning implementations in Cloud Run. Conclusion: In this capstone, we have created an app called MY Lips to recommend users' lip colors. As a backend, the Google Cloud Platform service connects android applications to SQL databases, Cloud Run services and Compute Engine.
-  
+
+
+  Cloud build & deploy
+
+gcloud builds submit --tag gcr.io/my-lips-387014/api_upload .
+gcloud run deploy --image gcr.io/my-lips-387014/api_upload
+
