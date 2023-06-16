@@ -52,12 +52,29 @@ This project utilizes the following libraries:
 - [ViewBinding](https://developer.android.com/topic/libraries/view-binding): ViewBinding is a feature in Android Studio that allows for more efficient and type-safe access to views in the layout files.
 
  # Cloud Computing
-Start a cloud environment using compute engine and SQL virtual machine instances, set up networking for server to mobile apps, debug machine learning implementations in Cloud Run. Conclusion: In this capstone, we have created an app called MY Lips to recommend users' lip colors. As a backend, the Google Cloud Platform service connects android applications to SQL databases, Cloud Run services and Compute Engine.
+1. Write App (Flask, TensorFlow)
 
+    The code to build, train, and save the model is in the test folder.
+    Implement the app in main.py
 
-  Cloud build & deploy
+2. Setup Google Cloud
+
+    Create new project
+    Activate Cloud Run API and Cloud Build API
+
+3. Install and init Google Cloud SDK
+
+    https://cloud.google.com/sdk/docs/install
+
+4. Dockerfile, requirements.txt, .dockerignore
+
+    https://cloud.google.com/run/docs/quickstarts/build-and-deploy#containerizing
+
+5. Cloud build & deploy
 
 gcloud builds submit --tag gcr.io/my-lips-387014/api_upload .
 
+
 gcloud run deploy --image gcr.io/my-lips-387014/api_upload
+
 
