@@ -1,0 +1,10 @@
+pip==23.1.2
+Pillow
+tensorflow
+wheel
+opencv-python==4.5.3.56
+imutils
+Flask
+numpy==1.23.5
+gunicorn
+google-cloud-storage
