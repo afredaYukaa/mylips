@@ -9,7 +9,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,11 +19,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mylips.databinding.ActivityMainBinding
-import com.example.mylips.retrofit.api.ApiConfig
 import com.example.mylips.retrofit.response.ListColorItem
 import com.example.mylips.view.ListColor
-
-import com.example.mylips.view.recommendation.RecommendActivity
 import com.example.mylips.view.recommendation.RecommendAdapter
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
