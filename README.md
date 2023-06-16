@@ -72,9 +72,8 @@ This project utilizes the following libraries:
 
 5. Cloud build & deploy
 
-gcloud builds submit --tag gcr.io/my-lips-387014/api_upload .
+    gcloud builds submit --tag gcr.io/my-lips-387014/api_upload .
 
-
-gcloud run deploy --image gcr.io/my-lips-387014/api_upload
+    gcloud run deploy --image gcr.io/my-lips-387014/api_upload
 
 
