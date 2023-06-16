@@ -37,3 +37,14 @@ We gathered our dataset manualy from various sources. The skin tone we use are d
 You can download our Dataset using the following link:
 - Skin Tone: [Link](https://drive.google.com/file/d/1aTdDH-M_G0ukOrk7NOKLzCYcXWzgqGRT)
 - Lipstick Color: [Link](https://drive.google.com/file/d/1dYU4EqqLljnqWNBBeXYZ_LvBJRfcTkXA/view?usp=sharing)
+
+
+# Mobile Development
+MyLips is a mobile app developed using kotlin. It provides a lipstick color recommendation based on users uploaded photo
+
+This project utilizes the following libraries:
+
+- [Glide](https://github.com/bumptech/glide): A fast and efficient image loading and caching library.
+- [Retrofit](https://square.github.io/retrofit/): A type-safe HTTP client for making API calls.
+- [CameraX](https://developer.android.com/training/camerax): The CameraX library provides a simplified and consistent API for accessing the camera capabilities on Android devices.
+- [ViewBinding](https://developer.android.com/topic/libraries/view-binding): ViewBinding is a feature in Android Studio that allows for more efficient and type-safe access to views in the layout files.
