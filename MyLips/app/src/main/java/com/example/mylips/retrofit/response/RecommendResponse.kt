@@ -2,10 +2,11 @@ package com.example.mylips.retrofit.response
 
 import com.google.gson.annotations.SerializedName
 
-data class GetStoriesResponse(
 
-    @field:SerializedName("listStory")
-    val listStory: List<ListStoryItem>,
+data class RecommendResponse(
+
+    @field:SerializedName("ListColor")
+    val listColor: List<ListColorItem>,
 
     @field:SerializedName("error")
     val error: Boolean,
@@ -14,20 +15,14 @@ data class GetStoriesResponse(
     val message: String
 )
 
-data class ListStoryItem(
+data class ListColorItem(
 
-    @field:SerializedName("photoUrl")
-    val photoUrl: String,
-
-
+    @field:SerializedName("link")
+    val link: String,
 
     @field:SerializedName("name")
     val name: String,
 
 
 
-    @field:SerializedName("id")
-    val id: String,
-
-
-    )
+)

@@ -10,13 +10,21 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mylips.databinding.ActivityMainBinding
 import com.example.mylips.retrofit.api.ApiConfig
-import com.example.mylips.retrofit.response.UploadResponse
+import com.example.mylips.retrofit.response.ListColorItem
+import com.example.mylips.view.ListColor
+
+import com.example.mylips.view.recommendation.RecommendActivity
+import com.example.mylips.view.recommendation.RecommendAdapter
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -26,8 +34,11 @@ import java.io.File
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private val mainViewModel by viewModels<MainViewModel>()
+    private val colorList = ArrayList<ListColor>()
+    private lateinit var rvRecommned: RecyclerView
     private var getFile: File? = null
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -72,8 +83,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startCameraX() {
+        binding.previewImageView.visibility = View.VISIBLE
+        binding.rvRecommend.visibility = View.GONE
         val intent = Intent(this, CameraActivity::class.java)
         launcherIntentCameraX.launch(intent)
+
 
     }
 
@@ -83,6 +97,8 @@ class MainActivity : AppCompatActivity() {
         intent.type = "image/*"
         val chooser = Intent.createChooser(intent, "Choose a Picture")
         launcherIntentGallery.launch(chooser)
+        binding.previewImageView.visibility = View.VISIBLE
+        binding.rvRecommend.visibility = View.GONE
     }
 
 
@@ -90,43 +106,56 @@ class MainActivity : AppCompatActivity() {
         if (getFile != null) {
             val file = reduceFileImage(getFile as File)
 
-            val description = "Ini adalah deksripsi gambar".toRequestBody("text/plain".toMediaType())
+
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
             val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                 "file",
                 file.name,
                 requestImageFile
             )
+            mainViewModel.uploadImage(imageMultipart, file.name)
 
-            val apiService = ApiConfig.getApiService()
+            mainViewModel.listColor.observe(this) { dataColors ->
+                setColors(dataColors)
+            }
 
 
-            val uploadImageRequest = apiService.uploadImage(imageMultipart,file.name.toRequestBody())
-            uploadImageRequest.enqueue(object : retrofit2.Callback<UploadResponse> {
-                override fun onResponse(
-                    call: retrofit2.Call<UploadResponse>,
-                    response: retrofit2.Response<UploadResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()
+            showToast()
 
-                        Toast.makeText(this@MainActivity, "sukeses :${responseBody?.name}", Toast.LENGTH_SHORT).show()
 
-                    } else {
-                        Toast.makeText(this@MainActivity,"error :${response}" , Toast.LENGTH_SHORT).show()
-                        Log.e("Error:","$response")
-                    }
-                }
+            rvRecommned = binding.rvRecommend
+            rvRecommned.layoutManager = LinearLayoutManager(this)
+            rvRecommned.adapter = RecommendAdapter(colorList)
 
-                override fun onFailure(call: Call<UploadResponse>, t: Throwable) {
-                    Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
-                    Log.e("Error: ","${t.message}")
-                }
-            })
+
+            binding.previewImageView.visibility = View.GONE
+            binding.rvRecommend.visibility = View.VISIBLE
+
+
+
         } else {
             Toast.makeText(this@MainActivity, "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun setColors(colorData: List<ListColorItem>): ArrayList<ListColor> {
+        val link = colorData.map { it.link }
+        val name = colorData.map { it.name }
+
+
+        for (i in link.indices) {
+
+            val color = ListColor(link[i], name[i])
+            colorList.add(color)
+        }
+        return colorList
+
+
+
+    }
+
+
+
 
 
     private val launcherIntentCameraX = registerForActivityResult(
@@ -163,12 +192,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun showToast() {
+        mainViewModel.toast.observe(this@MainActivity) { toastText ->
+            Toast.makeText(
+                this@MainActivity, toastText, Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
 
 
 
     companion object {
         const val CAMERA_X_RESULT = 200
-
+        const val COLOR_LIST = "listColor"
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }

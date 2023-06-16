@@ -1,11 +1,14 @@
 package com.example.mylips.retrofit.api
 
 
-import com.example.mylips.retrofit.response.GetStoriesResponse
-import com.example.mylips.retrofit.response.UploadResponse
+
+
+
+import com.example.mylips.retrofit.response.RecommendResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
@@ -15,11 +18,8 @@ interface ApiService {
     fun uploadImage(
         @Part file: MultipartBody.Part,
         @Part("filename") filename: RequestBody,
-    ): Call<UploadResponse>
+    ): Call<RecommendResponse>
 
 
-    @GET("stories")
-    fun getStoriesList(
-        @Header("Authorization") token: String,
-    ): Call<GetStoriesResponse>
+
 }
