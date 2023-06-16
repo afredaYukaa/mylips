@@ -17,6 +17,9 @@ C23-PC656 - Bangkit 2023 Captone Project
 ## Installation
 Install the APK
 
+## Screenshots
+![Image Description]https://drive.google.com/uc?export=view&id=1Vl40Cp0r_J0CVRWpOPBvaDoDPn9UyGAB
+
 # Machine Learning
 This project is built using Deep Learning Technology with Convolutional Neural Network algorithm. Here is the library that was used in this project.
 
