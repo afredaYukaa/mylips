@@ -58,5 +58,6 @@ Start a cloud environment using compute engine and SQL virtual machine instances
   Cloud build & deploy
 
 gcloud builds submit --tag gcr.io/my-lips-387014/api_upload .
+
 gcloud run deploy --image gcr.io/my-lips-387014/api_upload
 
