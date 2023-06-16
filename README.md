@@ -2,7 +2,6 @@
 C23-PC656 - Bangkit 2023 Captone Project
 
 ## Team Member 
-we are team of 6 with composition of 1 cc, 3 ml, and 2 md
 | Name	| Bangkit-ID	| Path |
 | ---  | ---  | --- |
 | Nasya Aghita Riona | M017DKY3918  | Machine Learning |
