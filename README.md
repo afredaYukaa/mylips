@@ -50,3 +50,7 @@ This project utilizes the following libraries:
 - [Retrofit](https://square.github.io/retrofit/): A type-safe HTTP client for making API calls.
 - [CameraX](https://developer.android.com/training/camerax): The CameraX library provides a simplified and consistent API for accessing the camera capabilities on Android devices.
 - [ViewBinding](https://developer.android.com/topic/libraries/view-binding): ViewBinding is a feature in Android Studio that allows for more efficient and type-safe access to views in the layout files.
+
+ #Cloud Computing
+Start a cloud environment using compute engine and SQL virtual machine instances, set up networking for server to mobile apps, debug machine learning implementations in Cloud Run. Conclusion: In this capstone, we have created an app called MY Lips to recommend users' lip colors. As a backend, the Google Cloud Platform service connects android applications to SQL databases, Cloud Run services and Compute Engine.
+  
