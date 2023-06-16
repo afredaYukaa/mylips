@@ -15,7 +15,7 @@ C23-PC656 - Bangkit 2023 Captone Project
 <div style="text-align: justify">The project that we are about to make is “My Lips”. My Lips is perfect for beginners who are just learning about makeup, have no one to consult or shy to consult others, because My Lips helps you recommend the selection of colors and types of lipstick that you can apply based on your skin tone so that people who want to start applying make up or find it difficult to match their skin tone take less time to try all colours by using My Lips. What makes our product unique is that our application will use face recognition to detect the users lips and analyze the users skin tone to recommend which color of lipstick is suitable with users skin tone, this will be much easier for the user to know their skin tone as they will not have to do any manual test or ask others to find what their skin tone color is.</div>
 
 ## Installation
-Install the APK
+To install the application, download the APK from [MyLips.apk](https://github.com/afredaYukaa/mylips/blob/main/MyLips.apk)
 
 
 
