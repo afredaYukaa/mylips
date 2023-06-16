@@ -1,0 +1,40 @@
+# MyLips
+C23-PC656 - Bangkit 2023 Captone Project
+
+## Team Member 
+we are team of 6 with composition of 1 cc, 3 ml, and 2 md
+| Name	| Bangkit-ID	| Path |
+| ---  | ---  | --- |
+| Nasya Aghita Riona | M017DKY3918  | Machine Learning |
+| Nashira Syifa Salsabila | M151DSY1466  | Machine Learning |
+| Tiani Ayu Lestari | M302DSY0111  | Machine Learning |
+| Jose Rafael | C037DKX4163  | Cloud Computing |
+| Afreda Yuka Suherman | C148DSX3564  | Cloud Computing |
+| Julius Kevin Raharjo | A212DKX4107  | Android |
+
+## About The Project
+<div style="text-align: justify">The project that we are about to make is “My Lips”. My Lips is perfect for beginners who are just learning about makeup, have no one to consult or shy to consult others, because My Lips helps you recommend the selection of colors and types of lipstick that you can apply based on your skin tone so that people who want to start applying make up or find it difficult to match their skin tone take less time to try all colours by using My Lips. What makes our product unique is that our application will use face recognition to detect the users lips and analyze the users skin tone to recommend which color of lipstick is suitable with users skin tone, this will be much easier for the user to know their skin tone as they will not have to do any manual test or ask others to find what their skin tone color is.</div>
+
+## Installation
+Install the APK
+
+# Machine Learning
+This project is built using Deep Learning Technology with Convolutional Neural Network algorithm. Here is the library that was used in this project.
+
+- Python 3.10
+- TensorFlow 2.12.0
+- NumPy 1.22.4
+- Matplotlib 3.7.1
+
+## Dataset
+
+We gathered our dataset manualy from various sources. The skin tone we use are divided into 6 colors:
+- Brown Caramel
+- Cacao Black Skin
+- Fair
+- Light Medium 
+- Dark Medium 
+
+You can download our Dataset using the following link:
+- Skin Tone: [Link](https://drive.google.com/file/d/1aTdDH-M_G0ukOrk7NOKLzCYcXWzgqGRT)
+- Lipstick Color: [Link](https://drive.google.com/file/d/1dYU4EqqLljnqWNBBeXYZ_LvBJRfcTkXA/view?usp=sharing)
